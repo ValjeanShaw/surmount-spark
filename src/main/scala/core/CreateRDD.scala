@@ -19,6 +19,8 @@ object CreateRDD {
     val spark=SparkSession.builder().master("local").appName("CreateRDD").getOrCreate()
 
     val rdd1=spark.sparkContext.makeRDD(List(1,2,3,4,5))
+    //后面参数代表分区，指定多少分区，rdd就会分多少个区
+    spark.sparkContext.makeRDD(1 to 18,4)
 
     val rdd2=spark.sparkContext.parallelize(Array(1,2,3,4,5))
 
