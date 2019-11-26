@@ -8,7 +8,7 @@ import org.apache.spark.sql.SparkSession
   *
   *      map  对数据一行一行操作
   *      mapPartition 分区操作数据，针对每个分区进行map，内部需要scala方法对分区内数据进行操作
-  *      mapPartitionsWithIndex 与mapPartition相似，增加了分区索引标注
+  *      mapPartitionsWithIndex 与mapPartition相似，但是带上了分区的索引
   */
 object Opera_map {
   def main(args: Array[String]): Unit = {
