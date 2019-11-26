@@ -6,8 +6,11 @@ import org.apache.spark.sql.SparkSession
   * @author xiaoran
   * @date 2019/11/26
   *
+  *      map  对数据一行一行操作
+  *      mapPartition 分区操作数据，针对每个分区进行map，内部需要scala方法对分区内数据进行操作
+  *      mapPartitionsWithIndex 与mapPartition相似，增加了分区索引标注
   */
-object AboutMap {
+object Opera_map {
   def main(args: Array[String]): Unit = {
     val spark=SparkSession.builder().master("local").appName("AboutMap").getOrCreate()
 
