@@ -12,3 +12,4 @@ lib_managed/
 bin/
 out/
 logs/*
+src/test/*
