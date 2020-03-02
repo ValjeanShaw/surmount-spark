@@ -20,5 +20,15 @@ object SparkSqlTwo_SQL {
     spark.sql("select * from user").show()
 
 
+    /**
+      * 全局表和临时表的区别
+      * 局部表只存在于session中，不能跨session访问，全局临时表不存在session中
+      *
+      * 全局表查询要加 global_temp.
+      */
+    frame.createOrReplaceGlobalTempView("userTable")
+    spark.sql("select * from global_temp.userTable").show()
+
+
   }
 }
